@@ -1,0 +1,556 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Music Rental System API",
+        "description": "API documentation for the Music Instrument Rental System. This API allows customers to browse instruments, create rental orders, and track their bookings.",
+        "contact": {
+            "name": "Music Rental Support",
+            "email": "support@musicrental.com"
+        },
+        "license": {
+            "name": "MIT License",
+            "url": "https://opensource.org/licenses/MIT"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost/api",
+            "description": "Local Development Server"
+        }
+    ],
+    "paths": {
+        "/booking/create-order": {
+            "post": {
+                "tags": [
+                    "Booking"
+                ],
+                "summary": "Create a new rental order",
+                "description": "Create a new rental order for an instrument",
+                "operationId": "99deeda4129a8ec7b50dc301aaf73370",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "instrument_id",
+                                    "rental_start_date",
+                                    "rental_end_date",
+                                    "quantity",
+                                    "first_name",
+                                    "last_name",
+                                    "email",
+                                    "phone",
+                                    "city",
+                                    "postal_code",
+                                    "id_card_number",
+                                    "delivery_method"
+                                ],
+                                "properties": {
+                                    "instrument_id": {
+                                        "description": "ID of the instrument to rent",
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "rental_start_date": {
+                                        "description": "Start date of rental",
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "2025-07-22"
+                                    },
+                                    "rental_end_date": {
+                                        "description": "End date of rental",
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "2025-07-25"
+                                    },
+                                    "quantity": {
+                                        "description": "Quantity to rent",
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "first_name": {
+                                        "description": "Customer first name",
+                                        "type": "string",
+                                        "example": "John"
+                                    },
+                                    "last_name": {
+                                        "description": "Customer last name",
+                                        "type": "string",
+                                        "example": "Doe"
+                                    },
+                                    "email": {
+                                        "description": "Customer email",
+                                        "type": "string",
+                                        "format": "email",
+                                        "example": "john.doe@example.com"
+                                    },
+                                    "phone": {
+                                        "description": "Customer phone number",
+                                        "type": "string",
+                                        "example": "081234567890"
+                                    },
+                                    "city": {
+                                        "description": "Customer city",
+                                        "type": "string",
+                                        "example": "Jakarta"
+                                    },
+                                    "postal_code": {
+                                        "description": "Customer postal code",
+                                        "type": "string",
+                                        "example": "12345"
+                                    },
+                                    "id_card_number": {
+                                        "description": "Customer ID card number",
+                                        "type": "string",
+                                        "example": "1234567890123456"
+                                    },
+                                    "address": {
+                                        "description": "Customer address (optional)",
+                                        "type": "string",
+                                        "example": "Jl. Example No. 123"
+                                    },
+                                    "delivery_method": {
+                                        "description": "Delivery method",
+                                        "type": "string",
+                                        "enum": [
+                                            "pickup",
+                                            "delivery"
+                                        ],
+                                        "example": "pickup"
+                                    },
+                                    "notes": {
+                                        "description": "Additional notes (optional)",
+                                        "type": "string",
+                                        "example": "Please handle with care"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Order created successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "success": {
+                                            "type": "boolean",
+                                            "example": true
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Order created successfully"
+                                        },
+                                        "data": {
+                                            "properties": {
+                                                "order_id": {
+                                                    "type": "integer",
+                                                    "example": 1
+                                                },
+                                                "order_number": {
+                                                    "type": "string",
+                                                    "example": "ORD-2025-0001"
+                                                },
+                                                "customer": {
+                                                    "properties": {
+                                                        "id": {
+                                                            "type": "integer",
+                                                            "example": 1
+                                                        },
+                                                        "name": {
+                                                            "type": "string",
+                                                            "example": "John Doe"
+                                                        },
+                                                        "email": {
+                                                            "type": "string",
+                                                            "example": "john.doe@example.com"
+                                                        },
+                                                        "phone": {
+                                                            "type": "string",
+                                                            "example": "081234567890"
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                },
+                                                "instrument": {
+                                                    "properties": {
+                                                        "id": {
+                                                            "type": "integer",
+                                                            "example": 1
+                                                        },
+                                                        "name": {
+                                                            "type": "string",
+                                                            "example": "Acoustic Guitar"
+                                                        },
+                                                        "daily_rate": {
+                                                            "type": "string",
+                                                            "example": "50000.00"
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                },
+                                                "rental_period": {
+                                                    "properties": {
+                                                        "start_date": {
+                                                            "type": "string",
+                                                            "format": "date",
+                                                            "example": "2025-07-22"
+                                                        },
+                                                        "end_date": {
+                                                            "type": "string",
+                                                            "format": "date",
+                                                            "example": "2025-07-25"
+                                                        },
+                                                        "days": {
+                                                            "type": "integer",
+                                                            "example": 4
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                },
+                                                "pricing": {
+                                                    "properties": {
+                                                        "subtotal": {
+                                                            "type": "number",
+                                                            "example": 200000
+                                                        },
+                                                        "tax_amount": {
+                                                            "type": "number",
+                                                            "example": 20000
+                                                        },
+                                                        "security_deposit": {
+                                                            "type": "number",
+                                                            "example": 25000
+                                                        },
+                                                        "total_amount": {
+                                                            "type": "number",
+                                                            "example": 245000
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                },
+                                                "status": {
+                                                    "type": "string",
+                                                    "example": "pending"
+                                                },
+                                                "payment_status": {
+                                                    "type": "string",
+                                                    "example": "pending"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request - Instrument not available",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "success": {
+                                            "type": "boolean",
+                                            "example": false
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Instrument is not available for rent or insufficient quantity."
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation errors",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "success": {
+                                            "type": "boolean",
+                                            "example": false
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Validation errors"
+                                        },
+                                        "errors": {
+                                            "properties": {
+                                                "email": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "string",
+                                                        "example": "The email field is required."
+                                                    }
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Server error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "success": {
+                                            "type": "boolean",
+                                            "example": false
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "An error occurred while processing your order"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/booking/order/{orderNumber}": {
+            "get": {
+                "tags": [
+                    "Booking"
+                ],
+                "summary": "Get order details by order number",
+                "description": "Retrieve detailed information about a rental order using its order number",
+                "operationId": "10c57ebdc3e829cc37c11dfe2364e052",
+                "parameters": [
+                    {
+                        "name": "orderNumber",
+                        "in": "path",
+                        "description": "Order number to retrieve",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": "ORD-2025-0001"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Order details retrieved successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "success": {
+                                            "type": "boolean",
+                                            "example": true
+                                        },
+                                        "data": {
+                                            "properties": {
+                                                "order_id": {
+                                                    "type": "integer",
+                                                    "example": 1
+                                                },
+                                                "order_number": {
+                                                    "type": "string",
+                                                    "example": "ORD-2025-0001"
+                                                },
+                                                "customer": {
+                                                    "properties": {
+                                                        "id": {
+                                                            "type": "integer",
+                                                            "example": 1
+                                                        },
+                                                        "name": {
+                                                            "type": "string",
+                                                            "example": "John Doe"
+                                                        },
+                                                        "email": {
+                                                            "type": "string",
+                                                            "example": "john.doe@example.com"
+                                                        },
+                                                        "phone": {
+                                                            "type": "string",
+                                                            "example": "081234567890"
+                                                        },
+                                                        "city": {
+                                                            "type": "string",
+                                                            "example": "Jakarta"
+                                                        },
+                                                        "postal_code": {
+                                                            "type": "string",
+                                                            "example": "12345"
+                                                        },
+                                                        "id_card_number": {
+                                                            "type": "string",
+                                                            "example": "1234567890123456"
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                },
+                                                "items": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "properties": {
+                                                            "instrument_id": {
+                                                                "type": "integer",
+                                                                "example": 1
+                                                            },
+                                                            "instrument_name": {
+                                                                "type": "string",
+                                                                "example": "Acoustic Guitar"
+                                                            },
+                                                            "quantity": {
+                                                                "type": "integer",
+                                                                "example": 1
+                                                            },
+                                                            "unit_price": {
+                                                                "type": "string",
+                                                                "example": "50000.00"
+                                                            },
+                                                            "rental_days": {
+                                                                "type": "integer",
+                                                                "example": 4
+                                                            },
+                                                            "total_price": {
+                                                                "type": "string",
+                                                                "example": "200000.00"
+                                                            }
+                                                        },
+                                                        "type": "object"
+                                                    }
+                                                },
+                                                "rental_period": {
+                                                    "properties": {
+                                                        "start_date": {
+                                                            "type": "string",
+                                                            "format": "date",
+                                                            "example": "2025-07-22"
+                                                        },
+                                                        "end_date": {
+                                                            "type": "string",
+                                                            "format": "date",
+                                                            "example": "2025-07-25"
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                },
+                                                "pricing": {
+                                                    "properties": {
+                                                        "subtotal": {
+                                                            "type": "string",
+                                                            "example": "200000.00"
+                                                        },
+                                                        "tax_amount": {
+                                                            "type": "string",
+                                                            "example": "20000.00"
+                                                        },
+                                                        "security_deposit": {
+                                                            "type": "string",
+                                                            "example": "25000.00"
+                                                        },
+                                                        "total_amount": {
+                                                            "type": "string",
+                                                            "example": "245000.00"
+                                                        },
+                                                        "outstanding_amount": {
+                                                            "type": "string",
+                                                            "example": "245000.00"
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                },
+                                                "status": {
+                                                    "type": "string",
+                                                    "example": "pending"
+                                                },
+                                                "payment_status": {
+                                                    "type": "string",
+                                                    "example": "pending"
+                                                },
+                                                "notes": {
+                                                    "type": "string",
+                                                    "example": "Please handle with care"
+                                                },
+                                                "created_at": {
+                                                    "type": "string",
+                                                    "format": "datetime",
+                                                    "example": "2025-07-21T10:30:00.000000Z"
+                                                },
+                                                "updated_at": {
+                                                    "type": "string",
+                                                    "format": "datetime",
+                                                    "example": "2025-07-21T10:30:00.000000Z"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Order not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "success": {
+                                            "type": "boolean",
+                                            "example": false
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Order not found"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Server error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "success": {
+                                            "type": "boolean",
+                                            "example": false
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "An error occurred while fetching order details"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Booking",
+            "description": "Booking"
+        }
+    ]
+}
