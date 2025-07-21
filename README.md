@@ -372,7 +372,7 @@ GET /api/health - API health check
 ## 📊 **Implementation Summary**
 
 ### **Completed Features**
-✅ User Authentication & Role Management  
+✅ User Authentication
 ✅ Customer Registration & Management  
 ✅ Instrument Catalog & Management  
 ✅ Rental Order Creation & Processing  
@@ -418,6 +418,6 @@ Sistem ini belum siap untuk deployment.
 ---
 
 **Document Version**: 1.0.0  
-**Last Updated**: July 21, 2025  
-**Author**: Development Team  
+**Last Updated**: July 22, 2025  
+**Author**: Fernanda
 **Status**: Not Ready Yet
