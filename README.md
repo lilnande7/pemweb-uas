@@ -421,3 +421,50 @@ Sistem ini belum siap untuk deployment.
 **Last Updated**: July 22, 2025  
 **Author**: Fernanda
 **Status**: Not Ready Yet
+
+***Attachment***
+-Homepage
+<img width="1907" height="974" alt="image" src="https://github.com/user-attachments/assets/9729ee45-4d97-42b6-bad4-b903d1db7be2" />
+<img width="1912" height="920" alt="image" src="https://github.com/user-attachments/assets/b907f7f2-f69a-4fce-86e0-32151e6b7e50" />
+<img width="1890" height="918" alt="image" src="https://github.com/user-attachments/assets/35a5331e-6132-4a26-8752-973626d0f7d4" />
+
+-Catalog Page: Grid/list view dengan filter dan search
+<img width="1899" height="972" alt="image" src="https://github.com/user-attachments/assets/994d251c-7e64-4ec3-b3c2-80b96b827260" />
+<img width="1905" height="921" alt="image" src="https://github.com/user-attachments/assets/400b1c18-3198-4828-8de5-a4e50b20ff6e" />
+
+- **Instrument Detail**: Detailed view dengan booking form
+<img width="1896" height="926" alt="image" src="https://github.com/user-attachments/assets/0eab04a0-2256-4435-8830-3953292d7b9b" />
+<img width="1900" height="938" alt="image" src="https://github.com/user-attachments/assets/ad4c1c1d-d850-4818-9e3a-d99053980d96" />
+
+- **Booking Form**: Multi-step form dengan validation
+<img width="1445" height="963" alt="image" src="https://github.com/user-attachments/assets/7f44f2bf-5f7c-4288-bd4b-0b0c3cbed713" />
+<img width="1302" height="843" alt="image" src="https://github.com/user-attachments/assets/e7ff3f4f-5452-4a3d-8b19-2575ad769873" />
+
+- **Booking Success**: Confirmation page dengan order details 
+<img width="1442" height="972" alt="image" src="https://github.com/user-attachments/assets/e7fe6bf5-ac54-4a7b-bc68-2cabae669406" />
+<img width="1274" height="828" alt="image" src="https://github.com/user-attachments/assets/6a50feb7-5bdb-414a-b83c-ffb349fea04f" />
+
+
+- **Track Order
+<img width="1527" height="968" alt="image" src="https://github.com/user-attachments/assets/cab66484-f78e-48c7-a54b-81441e212d8b" />
+<img width="1211" height="969" alt="image" src="https://github.com/user-attachments/assets/3b1e7cc1-63d8-4e26-b0d8-b2a8db79b4c9" />
+<img width="1227" height="955" alt="image" src="https://github.com/user-attachments/assets/7aed7628-4af1-45ee-a06e-bd4ae82811a5" />
+
+
+## Admin Panel ##
+- login dengan akses https://localhost/admin
+
+**Dashboard**
+<img width="1919" height="1017" alt="image" src="https://github.com/user-attachments/assets/34ad7ac0-ae90-45c2-827c-79b1bfc574fc" />
+<img width="1917" height="809" alt="image" src="https://github.com/user-attachments/assets/46d08760-7848-48d1-bab7-c67fc82ac58a" />
+`Terdapat orderan rental sebelumnya yang masih dalam status pending (menunggu persetujuan admin)`
+
+**Instrument Categories**
+<img width="1919" height="970" alt="image" src="https://github.com/user-attachments/assets/981773d2-960e-4cf4-9f4a-8d99410d4857" />
+`Alat musik berdasarkan kategori`
+<img width="1907" height="973" alt="image" src="https://github.com/user-attachments/assets/ce76b13a-809f-4b49-94f0-8af355f1f016" />
+`Admin dapat mengupdate alat musik, menghapus, dan membuat alat musik baru`
+
+**Customer Management**
+<img width="1919" height="971" alt="image" src="https://github.com/user-attachments/assets/abe3f8bd-526e-4bf6-97bc-0d1594536bf5" />
+`Admin dapat menambahkan pelanggan baru, meng-update, dan menghapus.`
